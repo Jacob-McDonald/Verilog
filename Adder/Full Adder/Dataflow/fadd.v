@@ -1,12 +1,12 @@
 module full_adder (
 input a, 
 input b, 
-input ci,
+input cin,
 output s, 
-output co
+output cout
 );
 
-assign s = a ^ b ^ ci;
-assign co = (a & b) | (a & ci) | (b & ci);
+assign sum = a ^ b ^ cin;
+assign cout = (a & b) | (a & cin) | (b & cin);
 
 endmodule

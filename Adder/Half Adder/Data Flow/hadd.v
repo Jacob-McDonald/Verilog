@@ -1,12 +1,12 @@
 module half_adder (
 
-    input  A,
-    input  B,
-    output S,
-    output Cout
+    input  a,
+    input  b,
+    output sum,
+    output carry
  );
 
-  assign S  = A ^ B; 
-  assign Cout = A & B;
+  assign sum  = a ^ b; 
+  assign carry = a & b;
  
 endmodule
