@@ -8,7 +8,7 @@ module d_latch (
  
    always @ (g, d) begin
       
-      if (g)
+      if (~en)
         q <= d;
       else
         q <=0

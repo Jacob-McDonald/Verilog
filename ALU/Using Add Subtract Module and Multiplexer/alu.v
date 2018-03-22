@@ -28,3 +28,4 @@ module alu(Y, C, V, N, Z, A, B, Op);
    and(V, Vas, s);
    and(N, Y[15], s);       // Most significant bit is the sign bit in 2's complement.   
    zero z(Z, Y);           // All operations can set the Zero status bit.
+   endmodule
