@@ -2,15 +2,20 @@ module d_flipFlop(
   
   input d, 
   input g, 
-  input reset,
-  output reg q
+  input rst,
+  output reg q,
+  output reg qn
 );
  
-  always @(posedge g, posedge reset) begin
-    if (reset)
-      q <= 0;
+ assign qn = ~q;
+ 
+  always @(posedge g, posedge rst) begin
+    if (rst)
+      q <= 1'b0;
     else
       q <= d;
   end
+
+  
 
 endmodule

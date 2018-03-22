@@ -6,8 +6,8 @@ output reg q,qb
 
 
 always@(posedge clk,posedge rst) begin
-	if (rst) 
-		q <= 0
+	if (!rst) 
+		q <= 1'b0
 
 	else begin
 		if(t)

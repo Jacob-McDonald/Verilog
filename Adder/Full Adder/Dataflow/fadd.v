@@ -2,7 +2,7 @@ module full_adder (
 input a, 
 input b, 
 input cin,
-output s, 
+output sum, 
 output cout
 );
 
