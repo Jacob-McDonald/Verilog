@@ -1,19 +1,19 @@
 module jkff(
 
-  input j,
+input j,
 input k,
 input c,
 output reg q,
-ouptut regqb
+output reg qn
 );
   
 initial 
 
-q=0;qb=1;
+q=0; qb=1;
 
 always @(posedge c)begin
   q = (j&~q) + (~k&q);
-  qb = !q;
+  qn = !q;
   end 
 
 endmodule
