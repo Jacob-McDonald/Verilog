@@ -7,7 +7,7 @@ module d_flipFlop(
   output reg qn
 );
  
- assign qn = ~q;
+  assign qn = ~q;
  
   always @(posedge g, posedge rst) begin
     if (rst)
