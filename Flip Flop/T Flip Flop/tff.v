@@ -13,7 +13,7 @@ if (!rst)
 	q <= 1'b0
 else begin
 	if(t)
-		q <= ~q;
+	q <= ~q;
 end
 
 end
