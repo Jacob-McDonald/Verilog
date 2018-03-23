@@ -10,6 +10,6 @@ output reg c
  if (a == b)
   c = 1'b1;
  else
- 	c = 1'b0;
+  c = 1'b0;
 
 endmodule 
