@@ -2,13 +2,13 @@ module comparator2 (
 
 input a
 input b
-output c
-reg c
+output reg c
 );
 
-always @ (a or b)
+ always @ (a, b)
+ 
  if (a == b)
- 	c = 1'b1;
+  c = 1'b1;
  else
  	c = 1'b0;
 
