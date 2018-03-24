@@ -1,4 +1,4 @@
-module cla_slice(
+module cla_cell(
    input a, 
    input b,
    input cin, // Determined using other generate and propagates.
