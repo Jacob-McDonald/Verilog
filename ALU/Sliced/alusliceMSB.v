@@ -1,17 +1,24 @@
-module alu_slice2MSB(result,set,overflow,a,b,cin,op,binvert,less);
-   input a, b, cin, binvert, less;
-   output set, overflow;
+module alu_slice2MSB(
+   input a, 
+   input b, 
+   input cin, 
+   input binvert, 
+   input less;
+   output set, 
+   output overflow;
    input [1:0] op;
    output      result;
-
-   parameter   sop_and = 0;
-   parameter   sop_or  = 1;
-   parameter   sop_add = 2;
-   parameter   sop_slt = 3;
+);
+   
+   parameter   andop = 0;
+   parameter   orop  = 1;
+   parameter   addop = 2;
+   parameter   sltop = 3;
 
    wire        b2 = binvert ? ~b : b;
    wire        sum;
 
+   
    assign overflow =
           op != sop_add ? 1'b0 :
           a != b2       ? 1'b0 :
@@ -19,8 +26,18 @@ module alu_slice2MSB(result,set,overflow,a,b,cin,op,binvert,less);
 
    assign set = a != b2 ? sum : a;
 
-   bfa_implicit bfa(sum,cout,a,b2,cin);
+   full_adder fa1(sum,cout,a,b2,cin);
 
+   
+   always @ (op)
+   case(op)
+      andop :  ; 
+      orop : ; 
+      addop :
+      sltop :    
+   default :; 
+ endcase
+   
    assign result =
           op == sop_and ? a & b :
           op == sop_or  ? a | b :
