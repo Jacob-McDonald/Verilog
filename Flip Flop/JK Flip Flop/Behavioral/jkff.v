@@ -2,7 +2,7 @@ module jkff(
 
 input j,
 input k,
-input c,
+input clk,
 output reg q,
 output reg qn
 );
@@ -11,7 +11,7 @@ initial
 
 q=0; qb=1;
 
-always @(posedge c)begin
+always @(posedge clk) begin
   q = (j&~q) + (~k&q);
   qn = !q;
   end 
