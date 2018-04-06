@@ -26,7 +26,7 @@ module displaydriver (
           (digit == 2'd2) ? 4'b1011 :
           4'b0111;
 
-  always@ (posedge clk or negedge reset)
+  always@ (posedge clk, negedge reset)
     if (!reset_)
       refresh_ctr <= 8'h00;
     else
